@@ -1,0 +1,64 @@
+Age:
+15 - 30 = 1
+30 - 45 = 2
+45+     = 3
+
+Gender:
+Male    = 1
+Female  = 2
+
+How long have you been working in the automotive industry?
+1-10 years     = 1
+11 - 20 years  = 2
+21 -30 years   = 3
+31 - 40 years  = 4
+41+ years      = 5
+
+Are you familiar with Machine Learning?
+Yes = 1
+No  = 2
+
+Which Machine Learning technique would you find most suitable for your organization? 
+No response  = 0
+Supervised   = 1
+Unsupervised = 2
+
+From what you know until now, do you think Machine Learning is useful in the automotive industry?
+Highly Agree    = 1
+Agree           = 2
+Disagree        = 3
+Highly Disagree = 4
+
+Given the definition, do you think that Predictive Analytics could be beneficial to businesses?
+Yes = 1
+No  = 2
+
+Do you find it difficult to estimate the number of sales to be made per year?
+Yes = 1
+No  = 2
+
+Do you think this system can provide a good sight of what's to come in the near future?
+Highly Agree    = 1
+Agree           = 2
+Disagree        = 3
+Highly Disagree = 4
+
+Do you think that financial planning can be aided with the use of this system?
+Yes = 1
+No  = 2
+
+Do you think it is sensible for a business to invest in such a system?
+Yes = 1
+No  = 2
+
+Have you ever made use of a similar system?
+Yes = 1
+No  = 2
+
+Would you recommend the use of a system which estimates the number of sales by giving the specifications?
+Yes = 1
+No  = 2
+
+Do you think that the shown tools are easily seen and that its features and functions are clearly identified?
+Yes = 1
+No  = 2

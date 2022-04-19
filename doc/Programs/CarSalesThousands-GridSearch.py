@@ -83,8 +83,6 @@ for param in pdq:
         except:
             continue
         
-        #Best model results with params (1,1,1)x(0,0,1,12)12- AIC: 993.8
-#Therefore we will fit this model as it shows that its the best one    
 mod = sm.tsa.statespace.SARIMAX(y,
                     order=(1, 1, 1),
                     seasonal_order=(1, 1, 1, 12),
@@ -98,7 +96,7 @@ results.plot_diagnostics(figsize=(16, 8))
 plt.show()
 #These plots show that residuals are near normally distributed 
 
-#We will test the model forecasts by comparing real data to forecasted one from 2017 to end of dataset
+#We will test the model forecasts by comparing real data to forecasted one from 2014 to end of dataset
 #Afterwards we will plot to see the difference
 pred = results.get_prediction(start=pd.to_datetime('2014-10-01'), dynamic=False)
 pred_ci = pred.conf_int()
@@ -114,13 +112,13 @@ ax.set_ylabel('Car Sales')
 plt.legend()
 plt.show()
 
-#Shows the mean squared error - 1085.79
+#Shows the mean squared error
 y_forecasted = pred.predicted_mean
 y_truth = y['2014-10-01':]
 mse = ((y_forecasted - y_truth) ** 2).mean()
 print('The Mean Squared Error of our forecasts is {}'.format(round(mse, 2)))
 
-#Shows the RMSE - Forecast vary by +- 32.95
+#Shows the RMSE
 print('The Root Mean Squared Error of our forecasts is {}'.format(round(np.sqrt(mse), 2)))
 
 #Forecast for the next 36 months or 3 years

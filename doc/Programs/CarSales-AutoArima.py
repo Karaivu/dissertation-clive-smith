@@ -15,13 +15,13 @@ import numpy as np
 #Reads from xlxs file and puts in new dataframe
 df = pd.read_excel("C:\\Users\\Csmit\\Documents\\MCAST\\Third Year\\Dissertation\\Dissertation\\dissertation-clive-smith\\doc\\Dataset\\CarSalesAuto.xlsx")
 
-#Puts data with category = 'Furniture' into new Dataframe
+#Puts data with category = 'vehicle' into new Dataframe
 CarDF = df.loc[df['Vehicle_type'] == 'Car']
 
 #Shows min and max of dates from rows
 CarDF['Launch'].min(), CarDF['Launch'].max()
 
-#Name unneeded columns from original df and removes them from furniture dataframe
+#Name unneeded columns from original df and removes them from vehicle dataframe
 cols = ['Manufacturer_model', 'Price', 'Horsepower', 'Fuel_efficiency', 'Vehicle_type']
 CarDF.drop(cols, axis=1, inplace=True)
 
@@ -56,7 +56,7 @@ stepwise_model = auto_arima(y, start_p = 1, start_q = 1,
                             stepwise = True)
 
 #The Akaike information criterion (AIC) is an estimator of the relative quality of statistical models for a given set of data. Given a collection of models for the data, AIC estimates the quality of each model, relative to each of the other models.
-#In this case the lowest AIC is 486.2063393665944
+
 print(stepwise_model.aic())
 
 #Split into training and testing datasets
@@ -79,7 +79,7 @@ new = pd.DataFrame(future_forecast,index = pd.date_range(start='2020-01-01', end
 #Shows the mean squared error
 mse = ((test_forecast['Prediction'] - test[1]) ** 2).mean()
 print('The Mean Squared Error of our forecasts is {}'.format(round(mse, 2)))
-#Shows the RMSE - In this case - 420.08
+#Shows the RMSE
 print('The Root Mean Squared Error of our forecasts is {}'.format(round(np.sqrt(mse), 2)))
 
 pd.concat([y,test_forecast],axis=1).plot()
