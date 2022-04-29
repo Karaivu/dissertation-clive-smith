@@ -115,7 +115,7 @@ plt.show()
 #Shows the mean squared error
 y_forecasted = pred.predicted_mean
 y_truth = y['2014-10-01':]
-mse = ((y_forecasted - y_truth) ** 2).mean()
+mse = ((y_forecasted - y_truth) * 2).mean()
 print('The Mean Squared Error of our forecasts is {}'.format(round(mse, 2)))
 
 #Shows the RMSE

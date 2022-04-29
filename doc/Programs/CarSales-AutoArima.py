@@ -77,7 +77,7 @@ test_forecast = pd.DataFrame(test_forecast,index = test.index,columns=['Predicti
 new = pd.DataFrame(future_forecast,index = pd.date_range(start='2020-01-01', end='2022-12-01', freq='MS'),columns=['Prediction'])
 
 #Shows the mean squared error
-mse = ((test_forecast['Prediction'] - test[1]) ** 2).mean()
+mse = ((test_forecast['Prediction'] - test[1]) * 2).mean()
 print('The Mean Squared Error of our forecasts is {}'.format(round(mse, 2)))
 #Shows the RMSE
 print('The Root Mean Squared Error of our forecasts is {}'.format(round(np.sqrt(mse), 2)))
